@@ -6,6 +6,4 @@ public class DangerScript : MonoBehaviour {
 
     public bool direction; // true - left , false - right
     public float speed;
-
-    public 
 }

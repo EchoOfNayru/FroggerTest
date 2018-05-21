@@ -10,6 +10,10 @@ public class RowScript : MonoBehaviour {
 
     void SpawnObject()
     {
+        GameObject temp = Instantiate(thingToSpawn);
+        if (type == 1)
+        {
 
+        }
     }
 }

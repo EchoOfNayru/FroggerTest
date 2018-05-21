@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public GameObject relic1, relic2, relic3;
 
     public GridScript grid;
+    public PlayerController playerController;
 
     void Awake()
     {

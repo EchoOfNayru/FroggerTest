@@ -17,6 +17,18 @@ public class PlayerController : MonoBehaviour
     public Vector3 previousPosition;
 
 
+    void Awake()
+    {
+        if (GameManager.instance.playerController == null)
+        {
+            GameManager.instance.playerController = this;
+        }
+        else
+        {
+            //Destroy(gameObject);
+        }
+    }
+
     //All trigger collision
     public void OnTriggerEnter(Collider other)
     {

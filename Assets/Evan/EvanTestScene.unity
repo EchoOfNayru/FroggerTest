@@ -143,6 +143,8 @@ MonoBehaviour:
   horizontalHopSpeed: 30
   moveTimerMax: 0.33333334
   moveTimer: 0
+  autoMoveTimerMax: 0.2
+  autoMoveTimer: 0
 --- !u!54 &148259826
 Rigidbody:
   m_ObjectHideFlags: 0

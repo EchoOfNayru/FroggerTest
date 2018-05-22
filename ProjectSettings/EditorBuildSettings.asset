@@ -4,4 +4,16 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Evan/Scenes/MainMenu.unity
+    guid: 2121b4e227bcc5c45aeeb32074fbad5d
+  - enabled: 1
+    path: Assets/Evan/Scenes/EvanTestScene.unity
+    guid: f0e56cd3d50b1714aad9191c8042581f
+  - enabled: 1
+    path: Assets/Evan/Scenes/LevelSelectMenu.unity
+    guid: 377785a4b6160e24fa0ea9c4ee4c2407
+  - enabled: 1
+    path: Assets/Evan/Scenes/GameOverMenu.unity
+    guid: a9769dad2c327064fb50c684c28b65d8

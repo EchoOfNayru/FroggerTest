@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    bool onLog;
+    public bool onLog;
 
     [Header("Movement")]
     public float gridMoveDistance;
@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     public float moveTimer;
     public float autoMoveTimerMax;
     public float autoMoveTimer;
+
+    public float verticalMoveTimerMax;
+    public float verticalMoveTimer;
+    public bool isMovingVerticalUp = false;
+    public bool isMovingVerticalDown = false;
 
     public Vector3 previousPosition;
 
@@ -43,6 +48,9 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.tag == "Obstacle")
         {
             gameObject.transform.position = previousPosition;
+            isMovingVerticalUp = false;
+            isMovingVerticalDown = false;
+            verticalMoveTimer = verticalMoveTimerMax;
         }
     }
 
@@ -105,13 +113,47 @@ public class PlayerController : MonoBehaviour
         }
 
         //Layer movement
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow)
+            &&
+            isMovingVerticalUp == false)
         {
-            //Sets previousPosition
-            previousPosition = gameObject.transform.position;
-            gameObject.transform.Translate(0, 0, gridMoveDistance);
-
+            if (moveTimer == moveTimerMax)
+            {
+                //Sets previousPosition
+                previousPosition = gameObject.transform.position;
+                isMovingVerticalUp = true;
+            }
         }
+        if (isMovingVerticalUp == true)
+        {
+            if (moveTimer > 0)
+            {
+                gameObject.transform.Translate(0, 0, horizontalHopSpeed * Time.deltaTime);
+                moveTimer -= Time.deltaTime;
+            }
+            else if (moveTimer <= 0)
+            {
+
+                autoMoveTimer -= Time.deltaTime;
+                if (autoMoveTimer <= 0)
+                {
+                    moveTimer = moveTimerMax;
+                    autoMoveTimer = autoMoveTimerMax;
+                    isMovingVerticalUp = false;
+                }
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            if (!Input.anyKey)
+            {
+                moveTimer = moveTimerMax;
+                autoMoveTimer = autoMoveTimerMax;
+            }
+        }
+
+
+
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             //Sets previousPosition
@@ -127,11 +169,13 @@ public class PlayerController : MonoBehaviour
     {
         moveTimer = moveTimerMax;
         autoMoveTimer = autoMoveTimerMax;
+        //verticalMoveTimer = verticalMoveTimerMax;
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMovement();
+
     }
 }

@@ -113,45 +113,51 @@ public class PlayerController : MonoBehaviour
         }
 
         //Layer movement
-        if (Input.GetKeyDown(KeyCode.UpArrow)
-            &&
-            isMovingVerticalUp == false)
-        {
-            if (moveTimer == moveTimerMax)
-            {
-                //Sets previousPosition
-                previousPosition = gameObject.transform.position;
-                isMovingVerticalUp = true;
-            }
-        }
-        if (isMovingVerticalUp == true)
-        {
-            if (moveTimer > 0)
-            {
-                gameObject.transform.Translate(0, 0, horizontalHopSpeed * Time.deltaTime);
-                moveTimer -= Time.deltaTime;
-            }
-            else if (moveTimer <= 0)
-            {
+        //if (Input.GetKeyDown(KeyCode.UpArrow)
+        //    &&
+        //    isMovingVerticalUp == false)
+        //{
+        //    if (moveTimer == moveTimerMax)
+        //    {
+        //        //Sets previousPosition
+        //        previousPosition = gameObject.transform.position;
+        //        isMovingVerticalUp = true;
+        //    }
+        //}
+        //if (isMovingVerticalUp == true)
+        //{
+        //    if (moveTimer > 0)
+        //    {
+        //        gameObject.transform.Translate(0, 0, horizontalHopSpeed * Time.deltaTime);
+        //        moveTimer -= Time.deltaTime;
+        //    }
+        //    else if (moveTimer <= 0)
+        //    {
 
-                autoMoveTimer -= Time.deltaTime;
-                if (autoMoveTimer <= 0)
-                {
-                    moveTimer = moveTimerMax;
-                    autoMoveTimer = autoMoveTimerMax;
-                    isMovingVerticalUp = false;
-                }
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            if (!Input.anyKey)
-            {
-                moveTimer = moveTimerMax;
-                autoMoveTimer = autoMoveTimerMax;
-            }
-        }
+        //        autoMoveTimer -= Time.deltaTime;
+        //        if (autoMoveTimer <= 0)
+        //        {
+        //            moveTimer = moveTimerMax;
+        //            autoMoveTimer = autoMoveTimerMax;
+        //            isMovingVerticalUp = false;
+        //        }
+        //    }
+        //}
+        //if (Input.GetKeyUp(KeyCode.UpArrow))
+        //{
+        //    if (!Input.anyKey)
+        //    {
+        //        moveTimer = moveTimerMax;
+        //        autoMoveTimer = autoMoveTimerMax;
+        //    }
+        //}
 
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            //Sets previousPosition
+            previousPosition = gameObject.transform.position;
+            gameObject.transform.Translate(0, 0, gridMoveDistance);
+        }
 
 
         else if (Input.GetKeyDown(KeyCode.DownArrow))

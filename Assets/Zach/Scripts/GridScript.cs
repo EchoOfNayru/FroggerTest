@@ -5,7 +5,7 @@ using UnityEngine;
 public class GridScript : MonoBehaviour {
 
     public float gridHeight;
-    public GameObject safeRow, dangerRow, waterRow;
+    public float gridWidth;
     public GameObject dangerObject, platformObject;
 
     public List<GameObject> grid = new List<GameObject>();
@@ -32,21 +32,24 @@ public class GridScript : MonoBehaviour {
     {
         for (int i = 0; i < grid.Capacity; i++)
         {
-            GameObject temp = Instantiate(grid[i]);
-            temp.transform.position = new Vector3(0, 0, 0 + (i * gridHeight));
-            temp.transform.SetParent(gameObject.transform);
-            RowScript row = temp.GetComponent<RowScript>();
-            if (row != null)
+            if (grid[i] != null)
             {
-                if (row.type == 1)
+                GameObject temp = Instantiate(grid[i]);
+                temp.transform.position = new Vector3(0, 0, 0 + (i * gridHeight));
+                temp.transform.SetParent(gameObject.transform);
+                RowScript row = temp.GetComponent<RowScript>();
+                if (row != null)
                 {
-                    row.thingToSpawn = dangerObject;
-                    row.direction = gridDirection[i];
-                }
-                else if (row.type == 2)
-                {
-                    row.thingToSpawn = platformObject;
-                    row.direction = gridDirection[i];
+                    if (row.type == 1)
+                    {
+                        row.thingToSpawn = dangerObject;
+                        row.direction = gridDirection[i];
+                    }
+                    else if (row.type == 2)
+                    {
+                        row.thingToSpawn = platformObject;
+                        row.direction = gridDirection[i];
+                    }
                 }
             }
         }
@@ -54,11 +57,25 @@ public class GridScript : MonoBehaviour {
     
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
         for (int i = 0; i < grid.Capacity; i++)
         {
-            Vector3 tempPos = new Vector3(0, 0, 0 + (i * gridHeight));
-            Gizmos.DrawCube(tempPos, new Vector3(18, 0.1f, 1));
+            if (grid[i] != null)
+            {
+                if (grid[i].GetComponent<RowScript>().type == 0)
+                {
+                    Gizmos.color = Color.green;
+                }
+                else if (grid[i].GetComponent<RowScript>().type == 1)
+                {
+                    Gizmos.color = Color.red;
+                }
+                else if (grid[i].GetComponent<RowScript>().type == 2)
+                {
+                    Gizmos.color = Color.blue;
+                }
+                Vector3 tempPos = new Vector3(0, 0, 0 + (i * gridHeight));
+                Gizmos.DrawCube(tempPos, new Vector3(gridWidth, 0.1f, 1));
+            }
         }
     }
 }

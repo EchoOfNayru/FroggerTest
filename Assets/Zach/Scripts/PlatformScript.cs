@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DangerScript : MonoBehaviour {
+public class PlatformScript : MonoBehaviour {
 
-    public bool direction; // true - left , false - right
+    public bool direction; // true - left, false - right
     public float speed;
+    public bool isStatic;
+    public bool isDippyDude;
 
     void Start()
     {
@@ -17,7 +19,10 @@ public class DangerScript : MonoBehaviour {
 
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
+        if (!isStatic)
+        {
+            transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -32,10 +37,6 @@ public class DangerScript : MonoBehaviour {
             {
                 transform.position = new Vector3(transform.position.x + 27, transform.position.y, transform.position.z);
             }
-        }
-        if (other.tag == "Player")
-        {
-            Destroy(other.gameObject);
         }
     }
 }

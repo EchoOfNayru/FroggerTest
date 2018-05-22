@@ -51,4 +51,14 @@ public class GridScript : MonoBehaviour {
             }
         }
     }
+    
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        for (int i = 0; i < grid.Capacity; i++)
+        {
+            Vector3 tempPos = new Vector3(0, 0, 0 + (i * gridHeight));
+            Gizmos.DrawCube(tempPos, new Vector3(18, 0.1f, 1));
+        }
+    }
 }

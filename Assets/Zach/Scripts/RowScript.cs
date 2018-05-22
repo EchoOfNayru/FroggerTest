@@ -8,12 +8,4 @@ public class RowScript : MonoBehaviour {
     public bool direction; // true - left, false - right
     public int type;   // 0 = safe, 1 = danger, 2 = water
 
-    void SpawnObject()
-    {
-        GameObject temp = Instantiate(thingToSpawn);
-        if (type == 1)
-        {
-
-        }
-    }
 }

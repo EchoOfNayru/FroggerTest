@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 
     public GridScript grid;
     public PlayerController playerController;
+    public CameraScript cam;
 
     void Awake()
     {

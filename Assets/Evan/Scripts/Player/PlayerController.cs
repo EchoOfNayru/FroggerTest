@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool onLog;
+    
 
     [Header("Movement")]
     public float gridMoveDistance;
@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 previousPosition;
 
+    Ray logCheckRay;
+    public bool onLog;
+    bool logDirection; //true - left, false - right
+    float logSpeed;
 
     void Awake()
     {
@@ -63,7 +67,7 @@ public class PlayerController : MonoBehaviour
         {
             if (moveTimer > 0)
             {
-                gameObject.transform.Translate(horizontalHopSpeed * Time.deltaTime, 0, 0);
+                gameObject.transform.Translate(horizontalHopSpeed, 0, 0);
                 moveTimer -= Time.deltaTime;
             }
             else if (moveTimer <= 0)
@@ -75,14 +79,6 @@ public class PlayerController : MonoBehaviour
                     moveTimer = moveTimerMax;
                     autoMoveTimer = autoMoveTimerMax;
                 }
-            }
-        }
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            if (!Input.anyKey)
-            {
-                moveTimer = moveTimerMax;
-                autoMoveTimer = autoMoveTimerMax;
             }
         }
 
@@ -90,7 +86,7 @@ public class PlayerController : MonoBehaviour
         {
             if (moveTimer > 0)
             {
-                gameObject.transform.Translate(-horizontalHopSpeed * Time.deltaTime, 0, 0);
+                gameObject.transform.Translate(-horizontalHopSpeed, 0, 0);
                 moveTimer -= Time.deltaTime;
             }
             else if (moveTimer <= 0)
@@ -103,13 +99,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        if (!Input.anyKey)
         {
-            if (!Input.anyKey)
-            {
-                moveTimer = moveTimerMax;
-                autoMoveTimer = autoMoveTimerMax;
-            }
+            moveTimer = moveTimerMax;
+            autoMoveTimer = autoMoveTimerMax;
         }
 
         //Layer movement
@@ -152,19 +145,29 @@ public class PlayerController : MonoBehaviour
         //    }
         //}
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow)
+            &&
+            upTimer <= -10
+            &&
+            downTimer <= -10)
         {
             //Sets previousPosition
-            previousPosition = gameObject.transform.position;
-            gameObject.transform.Translate(0, 0, gridMoveDistance);
+            //previousPosition = gameObject.transform.position;
+            //gameObject.transform.Translate(0, 0, gridMoveDistance);
+            upTimer = 11;
         }
 
 
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow)
+            &&
+            downTimer <= -10
+            &&
+            upTimer <= -10)
         {
             //Sets previousPosition
-            previousPosition = gameObject.transform.position;
-            gameObject.transform.Translate(0, 0, -gridMoveDistance);
+            //previousPosition = gameObject.transform.position;
+            //gameObject.transform.Translate(0, 0, -gridMoveDistance);
+            downTimer = 11;
         }
     }
 ////////End movement
@@ -178,10 +181,64 @@ public class PlayerController : MonoBehaviour
         //verticalMoveTimer = verticalMoveTimerMax;
     }
 
-    // Update is called once per frame
-    void Update()
+    // USE FIXED UPDATE FOR ALL THINGS RELATED TO MOVEMENT
+    // FIXED UPDATE IS CALLED EVERY 0.02 SECONDS
+    // FIXED UPDATE DOES NOT USE TIME.DELTATIME
+    void FixedUpdate()
     {
         PlayerMovement();
+        Debug.DrawRay(logCheckRay.origin, logCheckRay.direction, Color.green);
+        LogCheck();
+        MoveUpDuringTimer();
+        MoveDownDuringTimer();
+    }
 
+    void LogCheck()
+    {
+        logCheckRay.origin = transform.position;
+        logCheckRay.direction = Vector3.up * -1;
+        RaycastHit hit;
+        if (Physics.Raycast(logCheckRay, out hit))
+        {
+            if (hit.collider.tag == "Platform")
+            {
+                onLog = true;
+            }
+            else
+            {
+                onLog = false;
+            }
+        }
+        if (onLog)
+        {
+            PlatformScript log = hit.collider.GetComponent<PlatformScript>();
+            if (log != null)
+            {
+                if (!log.isStatic)
+                {
+                    transform.position = new Vector3(transform.position.x + log.speed, transform.position.y, transform.position.z);
+                }
+            }
+        }
+    }
+
+    public int upTimer = 0;
+    void MoveUpDuringTimer()
+    {
+        upTimer--;
+        if (upTimer > 0)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (gridMoveDistance / 10));
+        }
+    }
+
+    public int downTimer = 0;
+    void MoveDownDuringTimer()
+    {
+        downTimer--;
+        if (downTimer > 0)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (gridMoveDistance / 10));
+        }
     }
 }

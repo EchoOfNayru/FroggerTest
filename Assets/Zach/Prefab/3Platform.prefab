@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114065372412740596}
   m_Layer: 0
   m_Name: LeftPlatformCube
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114730496204030732}
   m_Layer: 0
   m_Name: RightPlatformCube
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 114763103788088330}
   m_Layer: 0
   m_Name: CenterPlatformCube
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

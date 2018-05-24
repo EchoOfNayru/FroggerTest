@@ -21,10 +21,15 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 previousPosition;
 
+    public int lastMove; // 1 - left, 2 - forward/back, 3 - right
+
     Ray logCheckRay;
     public bool onLog;
     bool logDirection; //true - left, false - right
     float logSpeed;
+    public int downTimer = 0;
+    public int upTimer = 0;
+    public int cameraTimer = 0;
 
     void Awake()
     {
@@ -35,6 +40,26 @@ public class PlayerController : MonoBehaviour
         else
         {
             //Destroy(gameObject);
+        }
+    }
+
+    void Start()
+    {
+        moveTimer = moveTimerMax;
+        autoMoveTimer = autoMoveTimerMax;
+    }
+
+    void FixedUpdate()
+    {
+        PlayerMovement();
+        Debug.DrawRay(logCheckRay.origin, logCheckRay.direction, Color.green);
+        LogCheck();
+        MoveUpDuringTimer();
+        MoveDownDuringTimer();
+        cameraTimer--;
+        if (cameraTimer <= 0)
+        {
+            lastMove = 2;
         }
     }
 
@@ -80,6 +105,8 @@ public class PlayerController : MonoBehaviour
                     autoMoveTimer = autoMoveTimerMax;
                 }
             }
+            lastMove = 3;
+            cameraTimer = 40;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -98,63 +125,23 @@ public class PlayerController : MonoBehaviour
                     autoMoveTimer = autoMoveTimerMax;
                 }
             }
+            lastMove = 1;
+            cameraTimer = 40;
         }
         if (!Input.anyKey)
         {
             moveTimer = moveTimerMax;
             autoMoveTimer = autoMoveTimerMax;
         }
-
-        //Layer movement
-        //if (Input.GetKeyDown(KeyCode.UpArrow)
-        //    &&
-        //    isMovingVerticalUp == false)
-        //{
-        //    if (moveTimer == moveTimerMax)
-        //    {
-        //        //Sets previousPosition
-        //        previousPosition = gameObject.transform.position;
-        //        isMovingVerticalUp = true;
-        //    }
-        //}
-        //if (isMovingVerticalUp == true)
-        //{
-        //    if (moveTimer > 0)
-        //    {
-        //        gameObject.transform.Translate(0, 0, horizontalHopSpeed * Time.deltaTime);
-        //        moveTimer -= Time.deltaTime;
-        //    }
-        //    else if (moveTimer <= 0)
-        //    {
-
-        //        autoMoveTimer -= Time.deltaTime;
-        //        if (autoMoveTimer <= 0)
-        //        {
-        //            moveTimer = moveTimerMax;
-        //            autoMoveTimer = autoMoveTimerMax;
-        //            isMovingVerticalUp = false;
-        //        }
-        //    }
-        //}
-        //if (Input.GetKeyUp(KeyCode.UpArrow))
-        //{
-        //    if (!Input.anyKey)
-        //    {
-        //        moveTimer = moveTimerMax;
-        //        autoMoveTimer = autoMoveTimerMax;
-        //    }
-        //}
-
         if (Input.GetKey(KeyCode.UpArrow)
             &&
             upTimer <= -10
             &&
             downTimer <= -10)
         {
-            //Sets previousPosition
-            //previousPosition = gameObject.transform.position;
-            //gameObject.transform.Translate(0, 0, gridMoveDistance);
             upTimer = 11;
+            lastMove = 2;
+            cameraTimer = 0;
         }
 
 
@@ -164,34 +151,12 @@ public class PlayerController : MonoBehaviour
             &&
             upTimer <= -10)
         {
-            //Sets previousPosition
-            //previousPosition = gameObject.transform.position;
-            //gameObject.transform.Translate(0, 0, -gridMoveDistance);
             downTimer = 11;
+            lastMove = 2;
         }
     }
 ////////End movement
 
-
-    // Use this for initialization
-    void Start()
-    {
-        moveTimer = moveTimerMax;
-        autoMoveTimer = autoMoveTimerMax;
-        //verticalMoveTimer = verticalMoveTimerMax;
-    }
-
-    // USE FIXED UPDATE FOR ALL THINGS RELATED TO MOVEMENT
-    // FIXED UPDATE IS CALLED EVERY 0.02 SECONDS
-    // FIXED UPDATE DOES NOT USE TIME.DELTATIME
-    void FixedUpdate()
-    {
-        PlayerMovement();
-        Debug.DrawRay(logCheckRay.origin, logCheckRay.direction, Color.green);
-        LogCheck();
-        MoveUpDuringTimer();
-        MoveDownDuringTimer();
-    }
 
     void LogCheck()
     {
@@ -221,8 +186,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    public int upTimer = 0;
+    
     void MoveUpDuringTimer()
     {
         upTimer--;
@@ -230,15 +194,22 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (gridMoveDistance / 10));
         }
+        else if (downTimer <= 0 && upTimer <= 0)
+        {
+            previousPosition = transform.position;
+        }
     }
-
-    public int downTimer = 0;
+    
     void MoveDownDuringTimer()
     {
         downTimer--;
         if (downTimer > 0)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (gridMoveDistance / 10));
+        }
+        else if (downTimer <= 0 && upTimer <= 0)
+        {
+            previousPosition = transform.position;
         }
     }
 }

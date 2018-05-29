@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

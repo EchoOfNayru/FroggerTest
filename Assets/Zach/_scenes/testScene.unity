@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 133438154}
   - component: {fileID: 133438153}
   - component: {fileID: 133438156}
+  - component: {fileID: 133438157}
   m_Layer: 0
   m_Name: Obstacle (2)
   m_TagString: Obstacle
@@ -214,7 +215,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -264,6 +265,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &133438157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 133438151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719919c799cdf2b488552d767e08994c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidMat: {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
+  transparentMat: {fileID: 2100000, guid: 0818dd3e8f3cb1846ad24cdbdb7b1788, type: 2}
+  isSolid: 1
+  row: 0
 --- !u!4 &195637584 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d,
@@ -353,7 +369,7 @@ Transform:
   - {fileID: 1597513534}
   - {fileID: 195637584}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &271763507 stripped
 Transform:
@@ -544,7 +560,7 @@ Transform:
   - {fileID: 1691164502}
   - {fileID: 1499205532}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &327819352 stripped
 Transform:
@@ -737,7 +753,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.492469
+      value: 1.1829696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
@@ -829,6 +845,7 @@ GameObject:
   - component: {fileID: 416273938}
   - component: {fileID: 416273937}
   - component: {fileID: 416273940}
+  - component: {fileID: 416273941}
   m_Layer: 0
   m_Name: Obstacle (1)
   m_TagString: Obstacle
@@ -844,7 +861,7 @@ Transform:
   m_GameObject: {fileID: 416273935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -10, y: 1, z: 6}
-  m_LocalScale: {x: 2, y: 6.5714455, z: 1}
+  m_LocalScale: {x: 2, y: 5.6728415, z: 1}
   m_Children: []
   m_Father: {fileID: 1638490934}
   m_RootOrder: 1
@@ -862,7 +879,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -912,6 +929,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &416273941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416273935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719919c799cdf2b488552d767e08994c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidMat: {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
+  transparentMat: {fileID: 2100000, guid: 0818dd3e8f3cb1846ad24cdbdb7b1788, type: 2}
+  isSolid: 1
+  row: 0
 --- !u!1001 &438186201
 Prefab:
   m_ObjectHideFlags: 0
@@ -976,7 +1008,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.492469
+      value: 1.1829696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
@@ -1510,6 +1542,7 @@ GameObject:
   - component: {fileID: 629835943}
   - component: {fileID: 629835942}
   - component: {fileID: 629835945}
+  - component: {fileID: 629835946}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -1543,7 +1576,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1593,6 +1626,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &629835946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 629835940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719919c799cdf2b488552d767e08994c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidMat: {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
+  transparentMat: {fileID: 2100000, guid: 0818dd3e8f3cb1846ad24cdbdb7b1788, type: 2}
+  isSolid: 1
+  row: 0
 --- !u!4 &635713768 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4440768476546070, guid: ecf6a7e97c11f7f47ac851d229017114,
@@ -1746,7 +1794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 41.089, y: -72.97, z: -31.477001}
 --- !u!1001 &746423174
 Prefab:
@@ -1949,7 +1997,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.492469
+      value: 1.1829696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
@@ -2094,7 +2142,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.492469
+      value: 1.1829696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
@@ -2146,7 +2194,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 379980393}
-  - {fileID: 2140334742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2438,7 +2485,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.492469
+      value: 1.1829696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
@@ -2588,7 +2635,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.492469
+      value: 1.1829696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
@@ -2676,10 +2723,10 @@ Transform:
   m_GameObject: {fileID: 1104458832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15, y: 1, z: 11}
-  m_LocalScale: {x: 1, y: 4, z: 23}
+  m_LocalScale: {x: 1, y: 13.237295, z: 83.42211}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1104458837
 Rigidbody:
@@ -2867,7 +2914,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4572415458580682, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
       propertyPath: m_LocalScale.y
-      value: 4.492469
+      value: 1.1829696
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88d407d17cc9bbc438d44858025a4a3d, type: 2}
@@ -3077,7 +3124,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1409853719
 Prefab:
@@ -3333,7 +3380,7 @@ Transform:
   - {fileID: 133438152}
   - {fileID: 2063815129}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1642148587
 Prefab:
@@ -3742,10 +3789,10 @@ Transform:
   m_GameObject: {fileID: 2014724044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15, y: 1, z: 11}
-  m_LocalScale: {x: 1, y: 4, z: 23}
+  m_LocalScale: {x: 1, y: 13.237295, z: 83.42211}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2014724049
 Rigidbody:
@@ -3774,6 +3821,7 @@ GameObject:
   - component: {fileID: 2063815132}
   - component: {fileID: 2063815131}
   - component: {fileID: 2063815130}
+  - component: {fileID: 2063815134}
   m_Layer: 0
   m_Name: Obstacle (3)
   m_TagString: Obstacle
@@ -3819,7 +3867,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3857,6 +3905,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2063815128}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2063815134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2063815128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719919c799cdf2b488552d767e08994c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidMat: {fileID: 2100000, guid: 92bb775182dec9b46a2a9c128d5d9ac7, type: 2}
+  transparentMat: {fileID: 2100000, guid: 0818dd3e8f3cb1846ad24cdbdb7b1788, type: 2}
+  isSolid: 1
+  row: 0
 --- !u!1001 &2076652890
 Prefab:
   m_ObjectHideFlags: 0
@@ -4138,11 +4201,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2140334737}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalRotation: {x: 0.2588191, y: -0, z: -0, w: 0.9659258}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 860244301}
+  m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!114 &2140334743

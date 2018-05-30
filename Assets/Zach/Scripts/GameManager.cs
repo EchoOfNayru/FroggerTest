@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -38,5 +39,18 @@ public class GameManager : MonoBehaviour {
         relic1.GetComponent<Renderer>().material = relic1test;
         relic2.GetComponent<Renderer>().material = relic2test;
         relic3.GetComponent<Renderer>().material = relic3test;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetLevel();
+        }
+    }
+
+    void ResetLevel()
+    {
+        SceneManager.LoadScene("testScene");
     }
 }

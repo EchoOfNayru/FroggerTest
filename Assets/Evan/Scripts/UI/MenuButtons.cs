@@ -12,7 +12,8 @@ public class MenuButtons : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("EvanTestScene");
+        SceneManager.LoadScene("SuperTestScene");
+        Time.timeScale = 1f;
     }
 
     public void LoadLevelSelectMenu()
@@ -24,4 +25,22 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    PauseMenu pauseMenu;
+
+    private void Start()
+    {
+        pauseMenu = GetComponent<PauseMenu>();
+    }
+    public static bool isPaused = false;
+    public void Unpause()
+{
+        pauseMenu.PauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+
+
+
 }

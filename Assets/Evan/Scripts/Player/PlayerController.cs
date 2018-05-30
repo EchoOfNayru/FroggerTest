@@ -16,8 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public float verticalMoveTimerMax;
     public float verticalMoveTimer;
-    public bool isMovingVerticalUp = false;
-    public bool isMovingVerticalDown = false;
+    public bool isMovingVertical = false;
 
     public Vector3 previousPosition;
 
@@ -77,8 +76,7 @@ public class PlayerController : MonoBehaviour
         else if (other.gameObject.tag == "Obstacle")
         {
             gameObject.transform.position = previousPosition;
-            isMovingVerticalUp = false;
-            isMovingVerticalDown = false;
+            isMovingVertical = false;
             verticalMoveTimer = verticalMoveTimerMax;
         }
     }
@@ -88,7 +86,9 @@ public class PlayerController : MonoBehaviour
     void PlayerMovement()
     {
         //Set layers vertical, variable movement horizontal
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow)
+            &&
+            isMovingVertical == false)
         {
             if (moveTimer > 0)
             {
@@ -109,7 +109,9 @@ public class PlayerController : MonoBehaviour
             cameraTimer = 40;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow)
+            &&
+            isMovingVertical == false)
         {
             if (moveTimer > 0)
             {
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
             &&
             downTimer <= -10)
         {
+            isMovingVertical = true;
             upTimer = 11;
             lastMove = 2;
             cameraTimer = 0;
@@ -151,11 +154,40 @@ public class PlayerController : MonoBehaviour
             &&
             upTimer <= -10)
         {
+            isMovingVertical = true;
             downTimer = 11;
             lastMove = 2;
         }
     }
-////////End movement
+
+    void MoveUpDuringTimer()
+    {
+        upTimer--;
+        if (upTimer > 0)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (gridMoveDistance / 10));
+        }
+        else if (downTimer <= 0 && upTimer <= 0)
+        {
+            isMovingVertical = false;
+            previousPosition = transform.position;
+        }
+    }
+
+    void MoveDownDuringTimer()
+    {
+        downTimer--;
+        if (downTimer > 0)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (gridMoveDistance / 10));
+        }
+        else if (downTimer <= 0 && upTimer <= 0)
+        {
+            isMovingVertical = false;
+            previousPosition = transform.position;
+        }
+    }
+    ////////End movement
 
 
     void LogCheck()
@@ -187,29 +219,5 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void MoveUpDuringTimer()
-    {
-        upTimer--;
-        if (upTimer > 0)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (gridMoveDistance / 10));
-        }
-        else if (downTimer <= 0 && upTimer <= 0)
-        {
-            previousPosition = transform.position;
-        }
-    }
-    
-    void MoveDownDuringTimer()
-    {
-        downTimer--;
-        if (downTimer > 0)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (gridMoveDistance / 10));
-        }
-        else if (downTimer <= 0 && upTimer <= 0)
-        {
-            previousPosition = transform.position;
-        }
-    }
+
 }

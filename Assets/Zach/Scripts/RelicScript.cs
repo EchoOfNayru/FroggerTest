@@ -58,7 +58,8 @@ public class RelicScript : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            isGrabbed = true;
         }
     }
 }

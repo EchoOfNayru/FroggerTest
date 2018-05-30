@@ -60,6 +60,12 @@ public class PlayerController : MonoBehaviour
         {
             lastMove = 2;
         }
+        if (upTimer <= -10
+            &&
+            downTimer <= -10)
+        {
+            SnapToRow();
+        }
     }
 
     //All trigger collision
@@ -70,7 +76,7 @@ public class PlayerController : MonoBehaviour
             ||
             other.gameObject.tag == "Water")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 ////////End death on trigger with enemies/water
         else if (other.gameObject.tag == "Obstacle")
@@ -218,6 +224,10 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    
 
+    void SnapToRow()
+    {
+        int snappedZPos = Mathf.RoundToInt(transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y, snappedZPos);
+    }
 }

@@ -8,6 +8,11 @@ public class PlatformScript : MonoBehaviour {
     public float speed;
     public bool isStatic;
     public bool isDippyDude;
+    public int dipTimer;
+    public int dipTimerMax;
+
+    public Material safe;
+    public Material dipping;
 
     void Start()
     {
@@ -15,6 +20,7 @@ public class PlatformScript : MonoBehaviour {
         {
             speed *= -1;
         }
+        if (isDippyDude) { dipTimer = dipTimerMax; }
     }
 
     void FixedUpdate()
@@ -22,6 +28,27 @@ public class PlatformScript : MonoBehaviour {
         if (!isStatic)
         {
             transform.position = new Vector3(transform.position.x + speed, transform.position.y, transform.position.z);
+        }
+        if (isDippyDude)
+        {
+            dipTimer--;
+            if (dipTimer <= 0)
+            {
+                transform.position = new Vector3(transform.position.x, -1, transform.position.z);
+            }
+            else if (dipTimer <= dipTimerMax / 3)
+            {
+                GetComponent<Renderer>().material = dipping;
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            }
+            if (dipTimer <= -(dipTimerMax / 2))
+            {
+                dipTimer = dipTimerMax;
+                GetComponent<Renderer>().material = safe;
+            }
         }
     }
 

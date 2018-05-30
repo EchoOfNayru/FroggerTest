@@ -77,7 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4440768476546070}
   m_Layer: 0
-  m_Name: 3Platform
+  m_Name: 3PlatformDippy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   direction: 1
   speed: 0.1
   isStatic: 1
-  isDippyDude: 0
+  isDippyDude: 1
   dipTimer: 0
   dipTimerMax: 100
   safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}
@@ -324,7 +324,7 @@ MonoBehaviour:
   direction: 1
   speed: 0.1
   isStatic: 1
-  isDippyDude: 0
+  isDippyDude: 1
   dipTimer: 0
   dipTimerMax: 100
   safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}
@@ -343,7 +343,7 @@ MonoBehaviour:
   direction: 1
   speed: 0.1
   isStatic: 1
-  isDippyDude: 0
+  isDippyDude: 1
   dipTimer: 0
   dipTimerMax: 100
   safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}

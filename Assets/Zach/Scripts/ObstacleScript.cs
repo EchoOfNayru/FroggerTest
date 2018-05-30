@@ -16,7 +16,7 @@ public class ObstacleScript : MonoBehaviour {
 
     void Update()
     {
-        if (GameManager.instance.playerController.transform.position.z >= row - 1)
+        if (GameManager.instance.playerController.transform.position.z >= row - 0.9)
         {
             isSolid = false;
         }

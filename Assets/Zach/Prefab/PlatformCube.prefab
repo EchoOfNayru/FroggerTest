@@ -109,3 +109,7 @@ MonoBehaviour:
   speed: 0.1
   isStatic: 0
   isDippyDude: 0
+  dipTimer: 0
+  dipTimerMax: 0
+  safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}
+  dipping: {fileID: 2100000, guid: 46541b1b261312c478ed47224bb3943a, type: 2}

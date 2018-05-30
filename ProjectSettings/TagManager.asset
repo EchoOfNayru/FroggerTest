@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Water
   - Platform
+  - Pickup/Relic
+  - Pickup/Points
   layers:
   - Default
   - TransparentFX

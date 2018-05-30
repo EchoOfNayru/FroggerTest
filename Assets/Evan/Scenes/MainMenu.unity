@@ -687,7 +687,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114303628358859112, guid: 70ff526d8cd25444bb4f3fd8eae94d94,
           type: 2}
-        m_MethodName: StartGame
+        m_MethodName: StartLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

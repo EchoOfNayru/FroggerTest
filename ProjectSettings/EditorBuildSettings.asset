@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Evan/Scenes/MainMenu.unity
     guid: 2121b4e227bcc5c45aeeb32074fbad5d
   - enabled: 1
+    path: Assets/Evan/SuperTestScene.unity
+    guid: f6b398f28d51b3447a6a6bc075e5c6f0
+  - enabled: 1
     path: Assets/Evan/Scenes/EvanTestScene.unity
     guid: f0e56cd3d50b1714aad9191c8042581f
   - enabled: 1
@@ -20,6 +23,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Zach/_scenes/testScene.unity
     guid: c507a9b1a46a956448f7e74112444bae
-  - enabled: 1
-    path: Assets/Evan/SuperTestScene.unity
-    guid: f6b398f28d51b3447a6a6bc075e5c6f0

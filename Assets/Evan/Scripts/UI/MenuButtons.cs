@@ -10,9 +10,15 @@ public class MenuButtons : MonoBehaviour
         Application.Quit();
     }
 
-    public void StartGame()
+    public void StartLevel1()
     {
         SceneManager.LoadScene("SuperTestScene");
+        Time.timeScale = 1f;
+    }
+
+    public void StartLevel2()
+    {
+        SceneManager.LoadScene("EvanTestScene");
         Time.timeScale = 1f;
     }
 
@@ -26,21 +32,10 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    PauseMenu pauseMenu;
+    public PauseMenu pauseMenu;
 
-    private void Start()
-    {
-        pauseMenu = GetComponent<PauseMenu>();
-    }
-    public static bool isPaused = false;
     public void Unpause()
-{
-        pauseMenu.PauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
+    {
+        pauseMenu.PauseUnpause();
     }
-
-
-
-
 }

@@ -9,11 +9,17 @@ public class GameManager : MonoBehaviour {
     public int level;
     public int lives;
     public int score;
-    public GameObject relic1, relic2, relic3;
+    public RelicScript relic1, relic2, relic3;
 
     public GridScript grid;
     public PlayerController playerController;
     public CameraScript cam;
+
+    public Material relic1test;
+    public Material relic2test;
+    public Material relic3test;
+
+    public UIManager uiManager;
 
     void Awake()
     {
@@ -25,5 +31,12 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        relic1.GetComponent<Renderer>().material = relic1test;
+        relic2.GetComponent<Renderer>().material = relic2test;
+        relic3.GetComponent<Renderer>().material = relic3test;
     }
 }

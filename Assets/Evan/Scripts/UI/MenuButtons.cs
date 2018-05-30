@@ -12,7 +12,7 @@ public class MenuButtons : MonoBehaviour
 
     public void StartLevel1()
     {
-        SceneManager.LoadScene("SuperTestScene");
+        SceneManager.LoadScene("testScene");
         Time.timeScale = 1f;
     }
 

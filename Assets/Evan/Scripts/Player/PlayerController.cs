@@ -17,18 +17,24 @@ public class PlayerController : MonoBehaviour
     public float verticalMoveTimerMax;
     public float verticalMoveTimer;
     public bool isMovingVertical = false;
+    public bool isDead = false;
 
-    public Vector3 previousPosition;
+    Vector3 previousPosition;
 
-    public int lastMove; // 1 - left, 2 - forward/back, 3 - right
+    int lastMove; // 1 - left, 2 - forward/back, 3 - right
 
     Ray logCheckRay;
-    public bool onLog;
+    bool onLog;
     bool logDirection; //true - left, false - right
     float logSpeed;
-    public int downTimer = 0;
-    public int upTimer = 0;
-    public int cameraTimer = 0;
+    int downTimer = 0;
+    int upTimer = 0;
+    int cameraTimer = 0;
+
+    public bool hasRelic;
+
+    //Cheats
+    public bool GodMode = false;
 
     void Awake()
     {
@@ -52,7 +58,10 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMovement();
         Debug.DrawRay(logCheckRay.origin, logCheckRay.direction, Color.green);
-        LogCheck();
+        if (!GodMode)
+        {
+            LogCheck();
+        }
         MoveUpDuringTimer();
         MoveDownDuringTimer();
         cameraTimer--;
@@ -66,25 +75,30 @@ public class PlayerController : MonoBehaviour
         {
             SnapToRow();
         }
+        SaveRelics();
     }
 
     //All trigger collision
     public void OnTriggerEnter(Collider other)
     {
-////////Death on trigger with enemies/water
-        if (other.gameObject.tag == "Enemy"
+        ////////Death on trigger with enemies/water
+        if (!GodMode)
+        {
+            if (other.gameObject.tag == "Enemy"
             ||
             other.gameObject.tag == "Water")
-        {
-            gameObject.SetActive(false);
+            {
+                gameObject.SetActive(false);
+                isDead = true;
+            }
         }
-////////End death on trigger with enemies/water
-        else if (other.gameObject.tag == "Obstacle")
-        {
-            gameObject.transform.position = previousPosition;
-            isMovingVertical = false;
-            verticalMoveTimer = verticalMoveTimerMax;
-        }
+        ////////End death on trigger with enemies/water
+        //else if (other.gameObject.tag == "Obstacle")
+        //{
+        //    gameObject.transform.position = previousPosition;
+        //    isMovingVertical = false;
+        //    verticalMoveTimer = verticalMoveTimerMax;
+        //}
     }
 
 
@@ -229,5 +243,36 @@ public class PlayerController : MonoBehaviour
     {
         int snappedZPos = Mathf.RoundToInt(transform.position.z);
         transform.position = new Vector3(transform.position.x, transform.position.y, snappedZPos);
+    }
+
+    void SaveRelics()
+    {
+        if (hasRelic && transform.position.z == 0)
+        {
+            if (GameManager.instance.relic1 != null)
+            {
+                if (GameManager.instance.relic1.isGrabbed)
+                {
+                    GameManager.instance.relic1.isGrabbed = false;
+                    GameManager.instance.relic1.isSafe = true;
+                }
+            }
+            if (GameManager.instance.relic2 != null)
+            {
+                if (GameManager.instance.relic2.isGrabbed)
+                {
+                    GameManager.instance.relic2.isGrabbed = false;
+                    GameManager.instance.relic2.isSafe = true;
+                }
+            }
+            if (GameManager.instance.relic3 != null)
+            {
+                if (GameManager.instance.relic3.isGrabbed)
+                {
+                    GameManager.instance.relic3.isGrabbed = false;
+                    GameManager.instance.relic3.isSafe = true;
+                }
+            }
+        }
     }
 }

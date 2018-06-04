@@ -32,5 +32,9 @@ public class ObstacleScript : MonoBehaviour {
         {
             GetComponent<Renderer>().material = transparentMat;
         }
+        if (GameManager.instance.playerController.GodMode)
+        {
+            GetComponent<BoxCollider>().isTrigger = true;
+        }
     }
 }

@@ -33,9 +33,5 @@ public class DangerScript : MonoBehaviour {
                 transform.position = new Vector3(transform.position.x + 27, transform.position.y, transform.position.z);
             }
         }
-        if (other.tag == "Player")
-        {
-            Destroy(other.gameObject);
-        }
     }
 }

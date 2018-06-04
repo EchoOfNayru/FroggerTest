@@ -60,6 +60,7 @@ public class RelicScript : MonoBehaviour {
         {
             gameObject.SetActive(false);
             isGrabbed = true;
+            other.GetComponent<PlayerController>().hasRelic = true;
         }
     }
 }

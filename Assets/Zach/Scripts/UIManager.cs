@@ -26,43 +26,62 @@ public class UIManager : MonoBehaviour {
 
     void Update()
     {
-        if (gameManager.relic1.isSafe)
+        if (gameManager.relic1 != null)
         {
-            relic1.texture = safe;
+            if (gameManager.relic1.isSafe)
+            {
+                relic1.texture = safe;
+            }
+            else if (!gameManager.relic1.isGrabbed)
+            {
+                relic1.texture = notGrabbed;
+            }
+            else if (gameManager.relic1.isGrabbed)
+            {
+                relic1.texture = grabbed;
+            }
         }
-        else if (!gameManager.relic1.isGrabbed)
+        if (gameManager.relic2 != null)
         {
-            relic1.texture = notGrabbed;
+            if (gameManager.relic2.isSafe)
+            {
+                relic2.texture = safe;
+            }
+            else if (!gameManager.relic2.isGrabbed)
+            {
+                relic2.texture = notGrabbed;
+            }
+            else if (gameManager.relic2.isGrabbed)
+            {
+                relic2.texture = grabbed;
+            }
         }
-        else if (gameManager.relic1.isGrabbed)
+        if (gameManager.relic3 != null)
         {
-            relic1.texture = grabbed;
+            if (gameManager.relic3.isSafe)
+            {
+                relic3.texture = safe;
+            }
+            else if (!gameManager.relic3.isGrabbed)
+            {
+                relic3.texture = notGrabbed;
+            }
+            else if (gameManager.relic3.isGrabbed)
+            {
+                relic3.texture = grabbed;
+            }
         }
-
-        if (gameManager.relic2.isSafe)
+        if (gameManager.relic1 == null)
         {
-            relic2.texture = safe;
+            Destroy(relic1);
         }
-        else if (!gameManager.relic2.isGrabbed)
+        if (gameManager.relic2 == null)
         {
-            relic2.texture = notGrabbed;
+            Destroy(relic2);
         }
-        else if (gameManager.relic2.isGrabbed)
+        if (gameManager.relic3 == null)
         {
-            relic2.texture = grabbed;
-        }
-
-        if (gameManager.relic3.isSafe)
-        {
-            relic3.texture = safe;
-        }
-        else if (!gameManager.relic3.isGrabbed)
-        {
-            relic3.texture = notGrabbed;
-        }
-        else if (gameManager.relic3.isGrabbed)
-        {
-            relic3.texture = grabbed;
+            Destroy(relic3);
         }
     }
 }

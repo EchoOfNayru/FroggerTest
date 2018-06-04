@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour {
 
     public UIManager uiManager;
 
+    int RelicsOnLevel;
+
     void Awake()
     {
         if (GameManager.instance == null)
@@ -36,21 +38,83 @@ public class GameManager : MonoBehaviour {
 
     void Start()
     {
-        relic1.GetComponent<Renderer>().material = relic1test;
-        relic2.GetComponent<Renderer>().material = relic2test;
-        relic3.GetComponent<Renderer>().material = relic3test;
+        if (relic1 != null)
+        {
+            relic1.GetComponent<Renderer>().material = relic1test;
+            RelicsOnLevel++;
+        }
+        if (relic2 != null)
+        {
+            relic2.GetComponent<Renderer>().material = relic2test;
+            RelicsOnLevel++;
+        }
+        if (relic3 != null)
+        {
+            relic3.GetComponent<Renderer>().material = relic3test;
+            RelicsOnLevel++;
+        }
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            ResetLevel();
+            RestartLevel();
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GodMode();
+        }
+        WinLevel(RelicsOnLevel);
+        if (playerController.isDead)
+        {
+            RestartLevel();
         }
     }
 
-    void ResetLevel()
+    void ResetPlayer()
     {
-        SceneManager.LoadScene("testScene");
+        playerController.hasRelic = false;
+        playerController.transform.position = Vector3.up;
+        playerController.gameObject.SetActive(true);
+        playerController.isDead = false;
+    }
+
+    void WinLevel(int totalRelics)
+    {
+        int safeRelics = 0;
+        if (relic1 != null && relic1.isSafe) safeRelics++;
+        if (relic2 != null && relic2.isSafe) safeRelics++;
+        if (relic3 != null && relic3.isSafe) safeRelics++;
+        if (safeRelics == totalRelics)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
+
+    void GodMode()
+    {
+        playerController.GetComponent<Rigidbody>().useGravity = false;
+        playerController.GodMode = true;
+    }
+
+    void RestartLevel()
+    {
+        if (relic1 != null)
+        {
+            relic1.isGrabbed = false;
+            relic1.gameObject.SetActive(true);
+        }
+        if (relic2 != null)
+        {
+            relic2.isGrabbed = false;
+            relic2.gameObject.SetActive(true);
+        }
+        if (relic3 != null)
+        {
+            relic3.isGrabbed = false;
+            relic3.gameObject.SetActive(true);
+        }
+        ResetPlayer();
     }
 }

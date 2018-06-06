@@ -1,0 +1,267 @@
+fileFormatVersion: 2
+guid: 6046b80af76fff74e9659a0a430fb53e
+timeCreated: 1528236588
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: AnkePivot_01_R
+    100002: AnklePivot_01_L
+    100004: Arm_Ctrl_L
+    100006: Arm_Ctrl_R
+    100008: ArmHandle_L
+    100010: ArmHandle_L 1
+    100012: ArmHandle_R
+    100014: ArmHandle_R 1
+    100016: //RootNode
+    100018: Base_Ctrl
+    100020: Clavical_01_L
+    100022: Clavical_01_R
+    100024: Core
+    100026: curve1
+    100028: Elbow_01_L
+    100030: Elbow_01_R
+    100032: Eye_L
+    100034: Eye_R
+    100036: Foot_01_L
+    100038: Foot_01_R
+    100040: Foot_02_L
+    100042: Foot_02_R
+    100044: Foot_03_L_END
+    100046: Foot_03_R_END
+    100048: Foot_Ctrl_L
+    100050: Foot_Ctrl_R
+    100052: FootHandle_01_L
+    100054: FootHandle_01_R
+    100056: FootHandle_02_L
+    100058: FootHandle_02_R
+    100060: FootPivot_01_R
+    100062: FootPivot_02_L
+    100064: FootPivot_02_L1
+    100066: FootPivot_02_R
+    100068: FootPivot_03_L
+    100070: FootPivot_03_R
+    100072: FootPivot_04_L
+    100074: FootPivot_04_R
+    100076: Frog_Mesh
+    100078: Head_01
+    100080: Head_02
+    100082: Head_03_END
+    100084: Head_Ctrl
+    100086: Hips_01
+    100088: Hips_Ctrl
+    100090: Leg_01_L
+    100092: Leg_01_R
+    100094: Leg_02_L
+    100096: Leg_02_R
+    100098: Leg_03_L
+    100100: Leg_03_R
+    100102: LegHandle_01_L
+    100104: LegHandle_01_L 1
+    100106: LegHandle_01_R
+    100108: LegHandle_02_R
+    100110: Middle_01_L
+    100112: Middle_01_R
+    100114: Middle_02_L
+    100116: Middle_02_R
+    100118: Middle_03_L_END
+    100120: Middle_03_R_END
+    100122: persp1
+    100124: Pinky_01_L
+    100126: Pinky_01_R
+    100128: Pinky_02_L
+    100130: Pinky_02_R
+    100132: Pinky_03_L_END
+    100134: Pinky_03_R_END
+    100136: Pointer_01_L
+    100138: Pointer_01_R
+    100140: Pointer_02_L
+    100142: Pointer_02_R
+    100144: Pointer_03_L_END
+    100146: Pointer_03_R_END
+    100148: Shoulder_01_L
+    100150: Shoulder_01_R
+    100152: Spine_01
+    100154: Spine_02
+    100156: Thumb_01_L
+    100158: Thumb_01_R
+    100160: Thumb_02_L
+    100162: Thumb_02_R
+    100164: Thumb_03_L_END
+    100166: Thumb_03_R_END
+    100168: Torso_Ctrl
+    100170: Wrist_01_L
+    100172: Wrist_01_R
+    400000: AnkePivot_01_R
+    400002: AnklePivot_01_L
+    400004: Arm_Ctrl_L
+    400006: Arm_Ctrl_R
+    400008: ArmHandle_L
+    400010: ArmHandle_L 1
+    400012: ArmHandle_R
+    400014: ArmHandle_R 1
+    400016: //RootNode
+    400018: Base_Ctrl
+    400020: Clavical_01_L
+    400022: Clavical_01_R
+    400024: Core
+    400026: curve1
+    400028: Elbow_01_L
+    400030: Elbow_01_R
+    400032: Eye_L
+    400034: Eye_R
+    400036: Foot_01_L
+    400038: Foot_01_R
+    400040: Foot_02_L
+    400042: Foot_02_R
+    400044: Foot_03_L_END
+    400046: Foot_03_R_END
+    400048: Foot_Ctrl_L
+    400050: Foot_Ctrl_R
+    400052: FootHandle_01_L
+    400054: FootHandle_01_R
+    400056: FootHandle_02_L
+    400058: FootHandle_02_R
+    400060: FootPivot_01_R
+    400062: FootPivot_02_L
+    400064: FootPivot_02_L1
+    400066: FootPivot_02_R
+    400068: FootPivot_03_L
+    400070: FootPivot_03_R
+    400072: FootPivot_04_L
+    400074: FootPivot_04_R
+    400076: Frog_Mesh
+    400078: Head_01
+    400080: Head_02
+    400082: Head_03_END
+    400084: Head_Ctrl
+    400086: Hips_01
+    400088: Hips_Ctrl
+    400090: Leg_01_L
+    400092: Leg_01_R
+    400094: Leg_02_L
+    400096: Leg_02_R
+    400098: Leg_03_L
+    400100: Leg_03_R
+    400102: LegHandle_01_L
+    400104: LegHandle_01_L 1
+    400106: LegHandle_01_R
+    400108: LegHandle_02_R
+    400110: Middle_01_L
+    400112: Middle_01_R
+    400114: Middle_02_L
+    400116: Middle_02_R
+    400118: Middle_03_L_END
+    400120: Middle_03_R_END
+    400122: persp1
+    400124: Pinky_01_L
+    400126: Pinky_01_R
+    400128: Pinky_02_L
+    400130: Pinky_02_R
+    400132: Pinky_03_L_END
+    400134: Pinky_03_R_END
+    400136: Pointer_01_L
+    400138: Pointer_01_R
+    400140: Pointer_02_L
+    400142: Pointer_02_R
+    400144: Pointer_03_L_END
+    400146: Pointer_03_R_END
+    400148: Shoulder_01_L
+    400150: Shoulder_01_R
+    400152: Spine_01
+    400154: Spine_02
+    400156: Thumb_01_L
+    400158: Thumb_01_R
+    400160: Thumb_02_L
+    400162: Thumb_02_R
+    400164: Thumb_03_L_END
+    400166: Thumb_03_R_END
+    400168: Torso_Ctrl
+    400170: Wrist_01_L
+    400172: Wrist_01_R
+    2000000: persp1
+    2300000: Eye_L
+    2300002: Eye_R
+    3300000: Eye_L
+    3300002: Eye_R
+    4300000: Frog_Mesh
+    4300002: Eye_L
+    4300004: Eye_R
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Frog_Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

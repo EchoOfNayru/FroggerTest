@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    Animator animator;
 
     [Header("Movement")]
     public float gridMoveDistance;
@@ -52,6 +52,12 @@ public class PlayerController : MonoBehaviour
     {
         moveTimer = moveTimerMax;
         autoMoveTimer = autoMoveTimerMax;
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        AnimatorTrigger();
     }
 
     void FixedUpdate()
@@ -101,8 +107,27 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
+    void AnimatorTrigger()
+    {
+        //////////Animation Trigger
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            animator.SetTrigger("isMovingForward");
+        }
 
-////////Movement
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            animator.SetTrigger("isMovingRight");
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            animator.SetTrigger("isMovingLeft");
+        }
+        //////////End animation trigger
+    }
+
+    ////////Movement
     void PlayerMovement()
     {
         //Set layers vertical, variable movement horizontal
@@ -129,12 +154,15 @@ public class PlayerController : MonoBehaviour
             cameraTimer = 40;
         }
 
+
         if (Input.GetKey(KeyCode.LeftArrow)
             &&
             isMovingVertical == false)
         {
+
             if (moveTimer > 0)
             {
+                
                 gameObject.transform.Translate(-horizontalHopSpeed, 0, 0);
                 moveTimer -= Time.deltaTime;
             }
@@ -161,6 +189,7 @@ public class PlayerController : MonoBehaviour
             &&
             downTimer <= -10)
         {
+            
             isMovingVertical = true;
             upTimer = 11;
             lastMove = 2;

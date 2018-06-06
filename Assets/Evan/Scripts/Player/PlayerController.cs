@@ -55,6 +55,11 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Update()
+    {
+        AnimatorTrigger();
+    }
+
     void FixedUpdate()
     {
         PlayerMovement();
@@ -102,8 +107,27 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
+    void AnimatorTrigger()
+    {
+        //////////Animation Trigger
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            animator.SetTrigger("isMovingForward");
+        }
 
-////////Movement
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            animator.SetTrigger("isMovingRight");
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            animator.SetTrigger("isMovingLeft");
+        }
+        //////////End animation trigger
+    }
+
+    ////////Movement
     void PlayerMovement()
     {
         //Set layers vertical, variable movement horizontal
@@ -129,23 +153,6 @@ public class PlayerController : MonoBehaviour
             lastMove = 3;
             cameraTimer = 40;
         }
-
-//////////Animation Trigger
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            animator.SetTrigger("isMovingForward");
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            animator.SetTrigger("isMovingRight");
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            animator.SetTrigger("isMovingLeft");
-        }
-        //////////End animation trigger
 
 
         if (Input.GetKey(KeyCode.LeftArrow)

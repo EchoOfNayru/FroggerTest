@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 25b8ccb5109e5334db0f9f19c47102e9
-timeCreated: 1528839997
+guid: 2cc407e88302c69418afb9f49134e3b6
+timeCreated: 1528911513
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface8
-    9500000: //RootNode
+    4300000: pPlane1
   materials:
     importMaterials: 1
     materialName: 0
@@ -61,7 +60,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -80,7 +79,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

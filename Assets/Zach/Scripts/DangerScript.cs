@@ -6,6 +6,7 @@ public class DangerScript : MonoBehaviour {
 
     public bool direction; // true - left , false - right
     public float speed;
+    public float resetAmount;
 
     void Start()
     {
@@ -26,11 +27,11 @@ public class DangerScript : MonoBehaviour {
         {
             if (!direction)
             {
-                transform.position = new Vector3(transform.position.x - 27, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x - resetAmount, transform.position.y, transform.position.z);
             }
             else
             {
-                transform.position = new Vector3(transform.position.x + 27, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + resetAmount, transform.position.y, transform.position.z);
             }
         }
     }

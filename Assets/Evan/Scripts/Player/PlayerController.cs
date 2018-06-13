@@ -134,11 +134,13 @@ public class PlayerController : MonoBehaviour
         {
             if (moveTimer > 0)
             {
+                animator.SetBool("isMovingRight", true); //animation
                 gameObject.transform.Translate(horizontalHopSpeed, 0, 0);
                 moveTimer -= Time.deltaTime;
             }
             else if (moveTimer <= 0)
             {
+                animator.SetBool("isMovingRight", false); //animation
                 autoMoveTimer -= Time.deltaTime;
                 if (autoMoveTimer <= 0)
                 {
@@ -149,6 +151,10 @@ public class PlayerController : MonoBehaviour
             }
             lastMove = 3;
             cameraTimer = 40;
+        }
+        else if (!Input.GetKey(KeyCode.RightArrow))
+        {
+            animator.SetBool("isMovingRight", false); //animation
         }
 
 
@@ -222,9 +228,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (downTimer <= 0 && upTimer <= 0)
         {
-
-                animator.SetBool("isMovingForward", false); //animation
-
+            animator.SetBool("isMovingForward", false); //animation
             isMovingVertical = false;
             previousPosition = transform.position;
         }
@@ -235,10 +239,12 @@ public class PlayerController : MonoBehaviour
         downTimer--;
         if (downTimer > 0)
         {
+            animator.SetBool("isMovingBack", true); //animation
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - (gridMoveDistance / 10));
         }
         else if (downTimer <= 0 && upTimer <= 0)
         {
+            animator.SetBool("isMovingBack", false); //animation
             isMovingVertical = false;
             previousPosition = transform.position;
         }

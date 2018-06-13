@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1836895035208514}
+  m_RootGameObject: {fileID: 1764948051377966}
   m_IsPrefabParent: 1
---- !u!1 &1836895035208514
+--- !u!1 &1764948051377966
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4329468914722618}
-  - component: {fileID: 33414435644358450}
-  - component: {fileID: 65201532913770294}
-  - component: {fileID: 23892484213078754}
-  - component: {fileID: 114870725595146336}
+  - component: {fileID: 4773799604371048}
+  - component: {fileID: 33982775431719226}
+  - component: {fileID: 23662734817346804}
+  - component: {fileID: 95333608935127418}
+  - component: {fileID: 114315518156615428}
   m_Layer: 0
-  m_Name: Water Row
-  m_TagString: Water
+  m_Name: FloorSafeArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4329468914722618
+--- !u!4 &4773799604371048
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836895035208514}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 22, y: 0.1, z: 1}
+  m_GameObject: {fileID: 1764948051377966}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.65, y: -1.1, z: -7.88}
+  m_LocalScale: {x: 1, y: 1, z: 22}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23892484213078754
+--- !u!23 &23662734817346804
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836895035208514}
+  m_GameObject: {fileID: 1764948051377966}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -56,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ae5e5a1980b891449b4bbfbca2314df5, type: 2}
+  - {fileID: 2100000, guid: 3d13f5ce97cf25f46b772c061aa87eb3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_SelectedEditorRenderState: 3
@@ -75,31 +75,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33414435644358450
+--- !u!33 &33982775431719226
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836895035208514}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65201532913770294
-BoxCollider:
+  m_GameObject: {fileID: 1764948051377966}
+  m_Mesh: {fileID: 4300000, guid: 77afbce33d4bc33478339326a6ee9de6, type: 3}
+--- !u!95 &95333608935127418
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836895035208514}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_GameObject: {fileID: 1764948051377966}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114870725595146336
+  m_Avatar: {fileID: 9000000, guid: 77afbce33d4bc33478339326a6ee9de6, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114315518156615428
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836895035208514}
+  m_GameObject: {fileID: 1764948051377966}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c84ec7c06551c34fabcd5bebe6dad61, type: 3}

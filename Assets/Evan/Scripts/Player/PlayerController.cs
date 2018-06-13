@@ -55,10 +55,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        AnimatorTrigger();
-    }
+    //private void Update()
+    //{
+    //    AnimatorTrigger();
+    //}
 
     void FixedUpdate()
     {
@@ -99,33 +99,30 @@ public class PlayerController : MonoBehaviour
             }
         }
         ////////End death on trigger with enemies/water
-        //else if (other.gameObject.tag == "Obstacle")
-        //{
-        //    gameObject.transform.position = previousPosition;
-        //    isMovingVertical = false;
-        //    verticalMoveTimer = verticalMoveTimerMax;
-        //}
     }
 
-    void AnimatorTrigger()
-    {
-        //////////Animation Trigger
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            animator.SetTrigger("isMovingForward");
-        }
+    //void AnimatorTrigger()
+    //{
+    //    ////////Animation Trigger
+    //    if (Input.GetKey(KeyCode.UpArrow))
+    //    {
+    //        animator.SetBool("isMovingForward", true); //integrated
+    //    }
+    //    else if (Input.GetKeyUp(KeyCode.UpArrow))
+    //    {
+    //        animator.SetBool("isMovingForward", false);
+    //    }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            animator.SetTrigger("isMovingRight");
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            animator.SetTrigger("isMovingLeft");
-        }
-        //////////End animation trigger
-    }
+    //    if (Input.GetKey(KeyCode.LeftArrow))
+    //    {
+    //        animator.SetBool("isMovingLeft", true); //integrated
+    //    }
+    //    else if (Input.GetKeyUp(KeyCode.LeftArrow))
+    //    {
+    //        animator.SetBool("isMovingLeft", false);
+    //    }
+    //    ////////End animation trigger
+    //}
 
     ////////Movement
     void PlayerMovement()
@@ -162,12 +159,13 @@ public class PlayerController : MonoBehaviour
 
             if (moveTimer > 0)
             {
-                
+                animator.SetBool("isMovingLeft", true); //animation
                 gameObject.transform.Translate(-horizontalHopSpeed, 0, 0);
                 moveTimer -= Time.deltaTime;
             }
             else if (moveTimer <= 0)
             {
+                animator.SetBool("isMovingLeft", false); //animation
                 autoMoveTimer -= Time.deltaTime;
                 if (autoMoveTimer <= 0)
                 {
@@ -178,6 +176,11 @@ public class PlayerController : MonoBehaviour
             lastMove = 1;
             cameraTimer = 40;
         }
+        else if (!Input.GetKey(KeyCode.LeftArrow))
+        {
+            animator.SetBool("isMovingLeft", false); //animation
+        }
+
         if (!Input.anyKey)
         {
             moveTimer = moveTimerMax;
@@ -214,10 +217,14 @@ public class PlayerController : MonoBehaviour
         upTimer--;
         if (upTimer > 0)
         {
+            animator.SetBool("isMovingForward", true); //animation
             transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (gridMoveDistance / 10));
         }
         else if (downTimer <= 0 && upTimer <= 0)
         {
+
+                animator.SetBool("isMovingForward", false); //animation
+
             isMovingVertical = false;
             previousPosition = transform.position;
         }

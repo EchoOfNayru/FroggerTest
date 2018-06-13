@@ -8,10 +8,10 @@ public class RowScript : MonoBehaviour {
 
     void Start()
     {
-        transform.localScale = new Vector3(GameManager.instance.grid.gridWidth, 1, 1);
-        if (type == 2)
-        {
-            transform.localScale = new Vector3(GameManager.instance.grid.gridWidth, 0.11f, 1);
-        }
+        //transform.localScale = new Vector3(GameManager.instance.grid.gridWidth, 1, 1);
+        //if (type == 2)
+        //{
+        //    transform.localScale = new Vector3(GameManager.instance.grid.gridWidth, 0.11f, 1);
+        //}
     }
 }

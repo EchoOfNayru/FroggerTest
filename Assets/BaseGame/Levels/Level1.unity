@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.449804, g: 0.49987203, b: 0.5756044, a: 1}
+  m_IndirectSpecularColor: {r: 0.44941264, g: 0.49948978, b: 0.5756992, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4427416785988038, guid: ed843baca5346584bbfa232de3120255, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224625387882930548, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
@@ -842,7 +842,7 @@ Prefab:
     - target: {fileID: 224625387882930548, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224080574801625316, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
@@ -862,7 +862,7 @@ Prefab:
     - target: {fileID: 224080574801625316, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224963864213285210, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
@@ -882,140 +882,8 @@ Prefab:
     - target: {fileID: 224963864213285210, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[1]
-      value: 
-      objectReference: {fileID: 1118565075214504, guid: 261be9955960f7147b2e2ebfc07b0fb3,
-        type: 2}
-    - target: {fileID: 114238531820643204, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: offset.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114238531820643204, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: offset.z
-      value: -3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975839442865996, guid: ed843baca5346584bbfa232de3120255, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.4999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975839442865996, guid: ed843baca5346584bbfa232de3120255, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975839442865996, guid: ed843baca5346584bbfa232de3120255, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975839442865996, guid: ed843baca5346584bbfa232de3120255, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -0.8660255
-      objectReference: {fileID: 0}
-    - target: {fileID: 4975839442865996, guid: ed843baca5346584bbfa232de3120255, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 420
-      objectReference: {fileID: 0}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[2]
-      value: 
-      objectReference: {fileID: 1118565075214504, guid: 261be9955960f7147b2e2ebfc07b0fb3,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[3]
-      value: 
-      objectReference: {fileID: 1118565075214504, guid: 261be9955960f7147b2e2ebfc07b0fb3,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[4]
-      value: 
-      objectReference: {fileID: 1118565075214504, guid: 261be9955960f7147b2e2ebfc07b0fb3,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[5]
-      value: 
-      objectReference: {fileID: 1118565075214504, guid: 261be9955960f7147b2e2ebfc07b0fb3,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[7]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[8]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[9]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[11]
-      value: 
-      objectReference: {fileID: 1118565075214504, guid: 261be9955960f7147b2e2ebfc07b0fb3,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[12]
-      value: 
-      objectReference: {fileID: 1118565075214504, guid: 261be9955960f7147b2e2ebfc07b0fb3,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[14]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[15]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[16]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[17]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[18]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[19]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
-    - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
-        type: 2}
-      propertyPath: grid.Array.data[20]
-      value: 
-      objectReference: {fileID: 1836895035208514, guid: 1cb11890be54d854292bf4ef55a003d5,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed843baca5346584bbfa232de3120255, type: 2}
   m_IsPrefabParent: 0

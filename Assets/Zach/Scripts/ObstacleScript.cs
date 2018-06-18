@@ -9,9 +9,12 @@ public class ObstacleScript : MonoBehaviour {
     public bool isSolid;
     public int row;
 
+    GameObject fogWall;
+
     void Start()
     {
         row = Mathf.RoundToInt(transform.position.z);
+        fogWall = GetComponentInChildren<ParticleSystem>().gameObject;
     }
 
     void Update()
@@ -27,10 +30,12 @@ public class ObstacleScript : MonoBehaviour {
         if (isSolid)
         {
             GetComponent<Renderer>().material = solidMat;
+            fogWall.SetActive(true);
         }
         else
         {
             GetComponent<Renderer>().material = transparentMat;
+            fogWall.SetActive(false);
         }
         if (GameManager.instance.playerController.GodMode)
         {

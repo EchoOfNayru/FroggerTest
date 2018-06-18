@@ -18,6 +18,7 @@ public class ObstacleScript : MonoBehaviour {
         fogWall = GetComponentInChildren<ParticleSystem>().gameObject;
         ParticleSystem.ShapeModule shapeModule = fogWall.GetComponent<ParticleSystem>().shape;
         shapeModule.radius = transform.localScale.x / 2;
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
     void Update()

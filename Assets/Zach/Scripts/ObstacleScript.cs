@@ -8,10 +8,16 @@ public class ObstacleScript : MonoBehaviour {
     public Material transparentMat;
     public bool isSolid;
     public int row;
+    public float particleHeight;
+
+    GameObject fogWall;
 
     void Start()
     {
         row = Mathf.RoundToInt(transform.position.z);
+        fogWall = GetComponentInChildren<ParticleSystem>().gameObject;
+        ParticleSystem.ShapeModule shapeModule = fogWall.GetComponent<ParticleSystem>().shape;
+        shapeModule.radius = transform.localScale.x / 2;
     }
 
     void Update()
@@ -27,10 +33,12 @@ public class ObstacleScript : MonoBehaviour {
         if (isSolid)
         {
             GetComponent<Renderer>().material = solidMat;
+            fogWall.transform.position = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
         }
         else
         {
             GetComponent<Renderer>().material = transparentMat;
+            fogWall.transform.position = new Vector3(0, -100, 0);
         }
         if (GameManager.instance.playerController.GodMode)
         {

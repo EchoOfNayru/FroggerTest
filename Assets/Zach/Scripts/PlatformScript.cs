@@ -8,6 +8,7 @@ public class PlatformScript : MonoBehaviour {
     public float speed;
     public bool isStatic;
     public bool isDippyDude;
+    public bool isActuallyTheDippingPartNotJustTheModel;
     public int dipTimer;
     public int dipTimerMax;
 
@@ -34,7 +35,10 @@ public class PlatformScript : MonoBehaviour {
             dipTimer--;
             if (dipTimer <= 0)
             {
-                transform.position = new Vector3(transform.position.x, -1, transform.position.z);
+                if (isActuallyTheDippingPartNotJustTheModel)
+                {
+                    transform.position = new Vector3(transform.position.x, -1, transform.position.z);
+                }
             }
             else if (dipTimer <= dipTimerMax / 3)
             {
@@ -42,7 +46,10 @@ public class PlatformScript : MonoBehaviour {
             }
             else
             {
-                transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+                if (isActuallyTheDippingPartNotJustTheModel)
+                {
+                    transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+                }
             }
             if (dipTimer <= -(dipTimerMax / 2))
             {

@@ -178,6 +178,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}
   m_IsPrefabParent: 0
@@ -1061,6 +1066,11 @@ Prefab:
       propertyPath: speed
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}
   m_IsPrefabParent: 0
@@ -1295,6 +1305,11 @@ Prefab:
       propertyPath: direction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}
   m_IsPrefabParent: 0
@@ -1502,6 +1517,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}
   m_IsPrefabParent: 0
@@ -1560,6 +1580,11 @@ Prefab:
         type: 2}
       propertyPath: speed
       value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}
@@ -1773,6 +1798,11 @@ Prefab:
         type: 2}
       propertyPath: speed
       value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}
@@ -2103,6 +2133,11 @@ Prefab:
         type: 2}
       propertyPath: direction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}
@@ -2533,6 +2568,11 @@ Prefab:
         type: 2}
       propertyPath: direction
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114038777625514230, guid: a083669586ac2d44e8671596ac804b67,
+        type: 2}
+      propertyPath: stopTimerMax
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a083669586ac2d44e8671596ac804b67, type: 2}

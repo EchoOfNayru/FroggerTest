@@ -8,17 +8,19 @@ public class DangerScript : MonoBehaviour {
     public float speed;
     public float resetAmount;
     public float stopTimerMax;
-
-    //float minStopRange = 0.5f * 50;
-    //float maxStopRange = 2;
+    public bool isRandom;
+    
     public float stopTimer;
     float brake;
 
     void Start()
     {
-        speed *= Random.Range(0.8f, 1.2f);
-        stopTimerMax *= Random.Range(0.6f, 1.4f);
-        stopTimer = stopTimerMax * (1 + (Random.Range(0.6f, 1.4f)));
+        if (isRandom)
+        {
+            speed *= Random.Range(0.8f, 1.2f);
+            stopTimerMax *= Random.Range(0.6f, 1.4f);
+            stopTimer = stopTimerMax * (1 + (Random.Range(0.6f, 1.4f)));
+        }
         if (direction == true)
         {
             speed *= -1;
@@ -87,10 +89,13 @@ public class DangerScript : MonoBehaviour {
                 }
             }
         }
-        if (stopTimer <= (stopTimerMax / 2) * -1)
+        if (stopTimer <= (stopTimerMax / 2) * -1 && isRandom)
         {
             stopTimer = stopTimerMax * ((Random.Range(2f, 9) / 10) + 1);
-            Debug.Log(stopTimer);
+        }
+        else
+        {
+            stopTimer = stopTimerMax;
         }
     }
 }

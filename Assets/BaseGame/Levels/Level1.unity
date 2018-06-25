@@ -170,7 +170,7 @@ Prefab:
     - target: {fileID: 224625387882930548, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224080574801625316, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
@@ -190,7 +190,7 @@ Prefab:
     - target: {fileID: 224080574801625316, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 224963864213285210, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
@@ -210,7 +210,7 @@ Prefab:
     - target: {fileID: 224963864213285210, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 114981030436705552, guid: ed843baca5346584bbfa232de3120255,
         type: 2}
@@ -1368,6 +1368,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146647443}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &150324772 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1272151866607124, guid: 2186684c640b6f14ead565184a181043,
+    type: 2}
+  m_PrefabInternal: {fileID: 1343627158}
+--- !u!114 &150324777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 150324772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c928a6ae2f1c9b74aa870d70cf019e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 0
+  speed: 0
+  isStatic: 0
+  isDippyDude: 0
+  isActuallyTheDippingPartNotJustTheModel: 0
+  dipTimer: 0
+  dipTimerMax: 100
+  safe: {fileID: 2100000, guid: 0e553a664671ae54eb00f9bfb7dc390b, type: 2}
+  dipping: {fileID: 2100000, guid: 02ef6c39bd190244facfcd8d1c03fc2f, type: 2}
 --- !u!1001 &150428883
 Prefab:
   m_ObjectHideFlags: 0
@@ -2652,6 +2677,26 @@ Prefab:
         type: 2}
       propertyPath: speed
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 114551081769433390, guid: 2186684c640b6f14ead565184a181043,
+        type: 2}
+      propertyPath: isDippyDude
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114551081769433390, guid: 2186684c640b6f14ead565184a181043,
+        type: 2}
+      propertyPath: isActuallyTheDippingPartNotJustTheModel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114322484758763446, guid: 2186684c640b6f14ead565184a181043,
+        type: 2}
+      propertyPath: isActuallyTheDippingPartNotJustTheModel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114322484758763446, guid: 2186684c640b6f14ead565184a181043,
+        type: 2}
+      propertyPath: isDippyDude
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2186684c640b6f14ead565184a181043, type: 2}
@@ -11158,6 +11203,31 @@ Transform:
   m_PrefabParentObject: {fileID: 4788162101971996, guid: 2186684c640b6f14ead565184a181043,
     type: 2}
   m_PrefabInternal: {fileID: 1343627158}
+--- !u!1 &1242745516 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1049543517071308, guid: 2186684c640b6f14ead565184a181043,
+    type: 2}
+  m_PrefabInternal: {fileID: 321866247}
+--- !u!114 &1242745521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1242745516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c928a6ae2f1c9b74aa870d70cf019e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 0
+  speed: 0
+  isStatic: 0
+  isDippyDude: 1
+  isActuallyTheDippingPartNotJustTheModel: 0
+  dipTimer: 0
+  dipTimerMax: 100
+  safe: {fileID: 2100000, guid: 88a35e9cceb690f489dcd9dae4b8db12, type: 2}
+  dipping: {fileID: 2100000, guid: ae5da84af5a68d64d9fdd09df6c1695c, type: 2}
 --- !u!1 &1254145199
 GameObject:
   m_ObjectHideFlags: 0
@@ -11782,6 +11852,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 46
       objectReference: {fileID: 0}
+    - target: {fileID: 114020605113557828, guid: 195edac5d1af08744ae5e38f43d89e47,
+        type: 2}
+      propertyPath: isStatic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 195edac5d1af08744ae5e38f43d89e47, type: 2}
   m_IsPrefabParent: 0
@@ -12082,6 +12157,21 @@ Prefab:
       propertyPath: speed
       value: 0.07
       objectReference: {fileID: 0}
+    - target: {fileID: 114551081769433390, guid: 2186684c640b6f14ead565184a181043,
+        type: 2}
+      propertyPath: isDippyDude
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114551081769433390, guid: 2186684c640b6f14ead565184a181043,
+        type: 2}
+      propertyPath: isActuallyTheDippingPartNotJustTheModel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23811263072053234, guid: 2186684c640b6f14ead565184a181043,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e553a664671ae54eb00f9bfb7dc390b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2186684c640b6f14ead565184a181043, type: 2}
   m_IsPrefabParent: 0
@@ -14913,6 +15003,31 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d01bf492ffc57f9449de4f7c9550cccd, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1614306743 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1272151866607124, guid: 2186684c640b6f14ead565184a181043,
+    type: 2}
+  m_PrefabInternal: {fileID: 321866247}
+--- !u!114 &1614306748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1614306743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c928a6ae2f1c9b74aa870d70cf019e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 0
+  speed: 0
+  isStatic: 0
+  isDippyDude: 0
+  isActuallyTheDippingPartNotJustTheModel: 0
+  dipTimer: 0
+  dipTimerMax: 100
+  safe: {fileID: 2100000, guid: 0e553a664671ae54eb00f9bfb7dc390b, type: 2}
+  dipping: {fileID: 2100000, guid: 02ef6c39bd190244facfcd8d1c03fc2f, type: 2}
 --- !u!1 &1615870995
 GameObject:
   m_ObjectHideFlags: 0
@@ -16536,6 +16651,11 @@ Prefab:
     - target: {fileID: 1417123181366684, guid: 195edac5d1af08744ae5e38f43d89e47, type: 2}
       propertyPath: m_Name
       value: 1Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114020605113557828, guid: 195edac5d1af08744ae5e38f43d89e47,
+        type: 2}
+      propertyPath: isStatic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 195edac5d1af08744ae5e38f43d89e47, type: 2}

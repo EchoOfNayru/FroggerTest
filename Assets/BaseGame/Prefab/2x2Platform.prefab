@@ -204,7 +204,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1178622147066842}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.495, y: -1.7968, z: 15.364}
+  m_LocalPosition: {x: -0.89, y: -1.7968, z: 15.364}
   m_LocalScale: {x: 0.52565086, y: 0.20908204, z: 0.2232619}
   m_Children:
   - {fileID: 4742060086409334}
@@ -220,7 +220,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1126688773334910}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47, y: 0, z: 2.5}
+  m_LocalPosition: {x: 6.81, y: 0, z: 21.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4769938921701060}
@@ -309,7 +309,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7434ba751acae5a42ac7058505960f29, type: 2}
+  - {fileID: 2100000, guid: 67d3918ae272efc4fb1e836bc570bf0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -341,7 +341,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7434ba751acae5a42ac7058505960f29, type: 2}
+  - {fileID: 2100000, guid: 3ee2e80acaece604697f31d34db1a168, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -405,7 +405,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 7434ba751acae5a42ac7058505960f29, type: 2}
+  - {fileID: 2100000, guid: 404d17337b89f8b448b30002e32ca35a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -681,8 +681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 0.1
-  isStatic: 0
-  isDippyDude: 1
+  isStatic: 1
+  isDippyDude: 0
   dipTimer: 0
   dipTimerMax: 100
   safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}
@@ -700,8 +700,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 0.1
-  isStatic: 0
-  isDippyDude: 1
+  isStatic: 1
+  isDippyDude: 0
   dipTimer: 0
   dipTimerMax: 100
   safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}
@@ -719,8 +719,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 0.1
-  isStatic: 0
-  isDippyDude: 1
+  isStatic: 1
+  isDippyDude: 0
   dipTimer: 0
   dipTimerMax: 100
   safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}
@@ -738,8 +738,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: 1
   speed: 0.1
-  isStatic: 0
-  isDippyDude: 1
+  isStatic: 1
+  isDippyDude: 0
   dipTimer: 0
   dipTimerMax: 100
   safe: {fileID: 2100000, guid: bf7a459c63453064ebb69d64de007ef8, type: 2}

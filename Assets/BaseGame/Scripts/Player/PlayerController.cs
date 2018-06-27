@@ -55,9 +55,11 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    //private bool hasPlayedAudioThisPress = false;
+
     //private void Update()
     //{
-    //    AnimatorTrigger();
+        
     //}
 
     void FixedUpdate()

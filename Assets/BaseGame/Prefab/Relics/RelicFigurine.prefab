@@ -89,7 +89,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466466873457256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.25, y: 1.2, z: 6}
+  m_LocalPosition: {x: 0, y: 1.1, z: 16}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4380917456985852}
@@ -301,6 +301,7 @@ MonoBehaviour:
   floatSpeed: 0.002
   floatTimer: 0
   floatMax: 80
+  type: Figurine
 --- !u!135 &135532312530379590
 SphereCollider:
   m_ObjectHideFlags: 1

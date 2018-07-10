@@ -28,7 +28,7 @@ public class MenuButtons : MonoBehaviour
     public void StartLevel3()
     {
         FindObjectOfType<AudioManagerScript>().Play("MenuButtonPress");
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level4");
         Time.timeScale = 1f;
     }
 

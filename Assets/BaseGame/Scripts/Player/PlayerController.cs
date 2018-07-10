@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
 
     public bool hasRelic;
 
+    bool hasPlayedSoundThisStepForward = false;
+    bool hasPlayedSoundThisStepBack = false;
+
     //Cheats
     public bool GodMode = false;
 
@@ -55,12 +58,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    //private bool hasPlayedAudioThisPress = false;
-
-    //private void Update()
-    //{
-        
-    //}
+    private bool hasPlayedAudioThisVerticalJump = false;
 
     void FixedUpdate()
     {
@@ -89,6 +87,11 @@ public class PlayerController : MonoBehaviour
     //All trigger collision
     public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Pickup/Relic")
+        {
+            FindObjectOfType<AudioManagerScript>().Play("ItemGet");
+        }
+
         ////////Death on trigger with enemies/water
         if (!GodMode)
         {
@@ -103,34 +106,37 @@ public class PlayerController : MonoBehaviour
         ////////End death on trigger with enemies/water
     }
 
-    //void AnimatorTrigger()
-    //{
-    //    ////////Animation Trigger
-    //    if (Input.GetKey(KeyCode.UpArrow))
-    //    {
-    //        animator.SetBool("isMovingForward", true); //integrated
-    //    }
-    //    else if (Input.GetKeyUp(KeyCode.UpArrow))
-    //    {
-    //        animator.SetBool("isMovingForward", false);
-    //    }
-
-    //    if (Input.GetKey(KeyCode.LeftArrow))
-    //    {
-    //        animator.SetBool("isMovingLeft", true); //integrated
-    //    }
-    //    else if (Input.GetKeyUp(KeyCode.LeftArrow))
-    //    {
-    //        animator.SetBool("isMovingLeft", false);
-    //    }
-    //    ////////End animation trigger
-    //}
-
     ////////Movement
     void PlayerMovement()
     {
-        //Set layers vertical, variable movement horizontal
-        if (Input.GetKey(KeyCode.RightArrow)
+
+        ////////Step Sound
+
+        if (
+            (((Input.GetKeyUp(KeyCode.RightArrow)
+            ||
+            Input.GetKeyUp(KeyCode.LeftArrow))
+            &&
+            autoMoveTimer == autoMoveTimerMax)
+            ||
+            (moveTimer <= 0
+            && 
+            autoMoveTimer == autoMoveTimerMax))
+            //||
+            //(upTimer >= 0
+            //||
+            //downTimer >= 0)
+           )
+        {
+            FindObjectOfType<AudioManagerScript>().Play("Jump1");
+        }
+
+
+        ////////End Step Sound
+
+
+            //Set layers vertical, variable movement horizontal
+            if (Input.GetKey(KeyCode.RightArrow)
             &&
             isMovingVertical == false)
         {
@@ -200,12 +206,13 @@ public class PlayerController : MonoBehaviour
             &&
             downTimer <= -10)
         {
-            
+            hasPlayedAudioThisVerticalJump = false;
             isMovingVertical = true;
             upTimer = 11;
             lastMove = 2;
             cameraTimer = 0;
         }
+
 
 
         else if (Input.GetKey(KeyCode.DownArrow)
@@ -214,6 +221,7 @@ public class PlayerController : MonoBehaviour
             &&
             upTimer <= -10)
         {
+            hasPlayedAudioThisVerticalJump = false;
             isMovingVertical = true;
             downTimer = 11;
             lastMove = 2;
@@ -233,6 +241,16 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMovingForward", false); //animation
             isMovingVertical = false;
             previousPosition = transform.position;
+
+            ////////Step Sound
+            if (isMovingVertical == false
+                &&
+                hasPlayedAudioThisVerticalJump == false)
+            {
+                FindObjectOfType<AudioManagerScript>().Play("Jump1");
+                hasPlayedAudioThisVerticalJump = true;
+            }
+            ////////End Step Sound
         }
     }
 
@@ -249,6 +267,16 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isMovingBack", false); //animation
             isMovingVertical = false;
             previousPosition = transform.position;
+
+            ////////Step Sound
+            if (isMovingVertical == false
+                &&
+                hasPlayedAudioThisVerticalJump == false)
+            {
+                FindObjectOfType<AudioManagerScript>().Play("Jump1");
+                hasPlayedAudioThisVerticalJump = true;
+            }
+            ////////End Step Sound
         }
     }
     ////////End movement
@@ -297,6 +325,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (GameManager.instance.relic1.isGrabbed)
                 {
+                    FindObjectOfType<AudioManagerScript>().Play("ItemStored"); //Sound
                     GameManager.instance.relic1.isGrabbed = false;
                     GameManager.instance.relic1.isSafe = true;
                 }
@@ -305,6 +334,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (GameManager.instance.relic2.isGrabbed)
                 {
+                    FindObjectOfType<AudioManagerScript>().Play("ItemStored"); //Sound
                     GameManager.instance.relic2.isGrabbed = false;
                     GameManager.instance.relic2.isSafe = true;
                 }
@@ -313,6 +343,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (GameManager.instance.relic3.isGrabbed)
                 {
+                    FindObjectOfType<AudioManagerScript>().Play("ItemStored"); //Sound
                     GameManager.instance.relic3.isGrabbed = false;
                     GameManager.instance.relic3.isSafe = true;
                 }

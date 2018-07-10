@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33793859797943366}
   - component: {fileID: 23593304222306894}
   - component: {fileID: 95947357286121078}
+  - component: {fileID: 114889558997178958}
   m_Layer: 0
   m_Name: Art_3DOBJ_ Relic_Knife_03
   m_TagString: Untagged
@@ -115,7 +116,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881585097099080}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.2, z: 5}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4964322776787970}
@@ -301,6 +302,21 @@ MonoBehaviour:
   floatSpeed: 0.002
   floatTimer: 0
   floatMax: 80
+--- !u!114 &114889558997178958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1429829093950710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b2d1169c003e046865ad5a3eb82973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: f815b93bc8e0fb24d93654fb4d12e1fd, type: 2}
+  glowSpeed: 5
+  glowLow: 1
+  glowHigh: 5
 --- !u!135 &135377156902979144
 SphereCollider:
   m_ObjectHideFlags: 1

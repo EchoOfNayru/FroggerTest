@@ -11,8 +11,6 @@ public class UIManager : MonoBehaviour {
 
     public Texture notGrabbed1, notGrabbed2, notGrabbed3, grabbed, safe;
 
-    public Text score;
-
     void Awake()
     {
         gameManager = GameManager.instance;
@@ -109,11 +107,5 @@ public class UIManager : MonoBehaviour {
         {
             Destroy(relic3);
         }
-        UpdateScore();
-    }
-
-    void UpdateScore()
-    {
-        score.text = "score: " + GameManager.instance.score;
     }
 }

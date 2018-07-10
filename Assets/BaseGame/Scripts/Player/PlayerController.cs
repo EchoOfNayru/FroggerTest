@@ -55,11 +55,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    //private void Update()
-    //{
-    //    AnimatorTrigger();
-    //}
-
     void FixedUpdate()
     {
         PlayerMovement();
@@ -203,6 +198,8 @@ public class PlayerController : MonoBehaviour
             upTimer = 11;
             lastMove = 2;
             cameraTimer = 0;
+            GameManager gameManager = GameManager.instance;
+            gameManager.score += 100;
         }
 
 

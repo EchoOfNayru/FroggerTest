@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33793859797943366}
   - component: {fileID: 23593304222306894}
   - component: {fileID: 95947357286121078}
+  - component: {fileID: 114889558997178958}
   m_Layer: 0
   m_Name: Art_3DOBJ_ Relic_Knife_03
   m_TagString: Untagged

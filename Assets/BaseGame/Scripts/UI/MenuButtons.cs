@@ -7,34 +7,40 @@ public class MenuButtons : MonoBehaviour
 {
     public void QuitGame()
     {
+        FindObjectOfType<AudioManagerScript>().Play("MenuButtonPress");
         Application.Quit();
     }
 
     public void StartLevel1()
     {
+        FindObjectOfType<AudioManagerScript>().Play("MenuButtonPress");
         SceneManager.LoadScene("Level1");
         Time.timeScale = 1f;
     }
 
     public void StartLevel2()
     {
+        FindObjectOfType<AudioManagerScript>().Play("MenuButtonPress");
         SceneManager.LoadScene("Level2");
         Time.timeScale = 1f;
     }
 
     public void StartLevel3()
     {
-        SceneManager.LoadScene("Level3");
+        FindObjectOfType<AudioManagerScript>().Play("MenuButtonPress");
+        SceneManager.LoadScene("Level4");
         Time.timeScale = 1f;
     }
 
     public void LoadLevelSelectMenu()
     {
+        FindObjectOfType<AudioManagerScript>().Play("MenuButtonPress");
         SceneManager.LoadScene("LevelSelectMenu");
     }
 
     public void LoadMainMenu()
     {
+        FindObjectOfType<AudioManagerScript>().Play("MenuButtonPress");
         SceneManager.LoadScene("MainMenu");
     }
 

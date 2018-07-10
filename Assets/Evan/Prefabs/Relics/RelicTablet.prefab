@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 33259289748164706}
   - component: {fileID: 23089889894320572}
   - component: {fileID: 95746297194410194}
+  - component: {fileID: 114678704227192228}
   m_Layer: 0
   m_Name: Art_3DOBJ_ Relic_Tablet_01 (1)
   m_TagString: Untagged
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1294774530449998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 3}
+  m_LocalPosition: {x: -8.49, y: 1.37, z: 11}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4821565642132318}
@@ -252,6 +253,21 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114678704227192228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868320973111718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b2d1169c003e046865ad5a3eb82973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: d153e73ae19b6fc4eb7a2dabfbccd7cb, type: 2}
+  glowSpeed: 5
+  glowLow: 1
+  glowHigh: 5
 --- !u!114 &114888497078156978
 MonoBehaviour:
   m_ObjectHideFlags: 1

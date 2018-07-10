@@ -36,12 +36,16 @@ public class PlatformScript : MonoBehaviour {
             {
                 if (isActuallyTheDippingPartNotJustTheModel)
                 {
-                    transform.position = new Vector3(transform.position.x, -10, transform.position.z);
+                    transform.position = new Vector3(transform.position.x, -2, transform.position.z);
                 }
             }
             else if (dipTimer <= dipTimerMax / 3)
             {
-                GetComponent<Renderer>().material = dipping;
+                int i = 0;
+                foreach (Material mat in GetComponent<Renderer>().materials)
+                {
+                    GetComponent<Renderer>().material = dipping;
+                }
             }
             else
             {

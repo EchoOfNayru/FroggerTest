@@ -36,6 +36,10 @@ public class ObstacleScript : MonoBehaviour {
         {
             rOT = 20;
         }
+        else if (transform.localScale.x < 20)
+        {
+            rOT = 80;
+        }
         GetComponent<MeshRenderer>().enabled = false;
     }
 
